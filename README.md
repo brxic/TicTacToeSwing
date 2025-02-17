@@ -9,5 +9,5 @@
 - They start playing alternately
 
 **Task 2:**  
-- Huma vs AI
+- Human vs AI
 - Use number pad to press buttons
