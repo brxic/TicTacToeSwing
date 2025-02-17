@@ -1,13 +1,13 @@
-Aufgabe 1:  
-- Mensch gegen Mensch  
-- Zu Beginn des Spiels gibt jeder Spieler seinen Namen ein  
-- Pro Runde wird der/die GewinnerIn angezeigt, sowie der Punktestand  
-- Während dem Spiel ist ersichtlich, welcher Spieler am Zug ist  
-- Man kann so lange spielen, bis man mit einem Button das Programm beendet  
-- Verwende für das Spiel verschiedene Farben  
-- Bei einem Unentschieden / Sieg erscheint eine Meldung  
-- Es wird abwechselnd angefangen mit spielen  
+**Task 1:**  
+- Human vs Human
+- At the start of the game, each player enters their name
+- The winner is displayed for each round, as well as the score
+- During the game you can see which player's turn it is
+- You can play until you end the program with a button
+- Use different colors for the game
+- If there is a draw/win, a message appears
+- They start playing alternately
 
-Aufgabe 2:  
-- Mensch gegen Computer  
-- Nummernblock verwenden um Buttons zu drücken  
+**Task 2:**  
+- Huma vs AI
+- Use number pad to press buttons
