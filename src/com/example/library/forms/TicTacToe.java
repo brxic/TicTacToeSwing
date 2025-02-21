@@ -15,16 +15,58 @@ public class TicTacToe extends javax.swing.JFrame {
     public TicTacToe() {
         initComponents();
         initializeGame();
+        setupKeyboardControls();
+        this.setFocusable(true);
+        this.requestFocusInWindow();
+        gamePanel.setFocusable(false);
     }
+
+    // keyboard controls definieren
+    private void KeyPress(int keyCode) {
+        int row = 1, col = -1;
+        switch (keyCode) {
+            case KeyEvent.VK_NUMPAD7: case KeyEvent.VK_Q: row = 0; col = 0; break;
+            case KeyEvent.VK_NUMPAD8: case KeyEvent.VK_W: row = 0; col = 1; break;
+            case KeyEvent.VK_NUMPAD9: case KeyEvent.VK_E: row = 0; col = 2; break;
+            case KeyEvent.VK_NUMPAD4: case KeyEvent.VK_R: row = 1; col = 0; break;
+            case KeyEvent.VK_NUMPAD5: case KeyEvent.VK_T: row = 1; col = 1; break;
+            case KeyEvent.VK_NUMPAD6: case KeyEvent.VK_Z: row = 1; col = 2; break;
+            case KeyEvent.VK_NUMPAD1: case KeyEvent.VK_U: row = 2; col = 0; break;
+            case KeyEvent.VK_NUMPAD2: case KeyEvent.VK_I: row = 2; col = 1; break;
+            case KeyEvent.VK_NUMPAD3: case KeyEvent.VK_O: row = 2; col = 2; break;
+            default:
+                return;
+
+        }
+
+        if (row != -1 && col != -1) {
+            JButton btn = buttons[row][col];
+            if (btn.getText().equals("")) {
+                buttonClicked(btn);
+            }
+        }
+
+    }
+
+    private String getUniquePlayerName(String prompt, String otherPlayerName) {
+        String name;
+        do {
+            name = JOptionPane.showInputDialog(this, prompt);
+            if (name == null || name.trim().isEmpty()) {
+                name = "Player"; // standard name für spieler
+            }
+            if (name.equalsIgnoreCase(otherPlayerName)) {
+                JOptionPane.showMessageDialog(this, "Players cannot have the same name! Choose a different one.", "Name Conflict", JOptionPane.WARNING_MESSAGE);
+            }
+        } while (name.equalsIgnoreCase(otherPlayerName)); // wiederholen wenn der spieler zu blöd ist einen andern namen einzugeben
+        return name;
+    }
+
 
     private void initializeGame() {
         // holt die spielernamen vom input popup
-        player1Name = JOptionPane.showInputDialog(this, "Enter name for Player 1 (X):");
-        player2Name = JOptionPane.showInputDialog(this, "Enter name for Player 2 (O):");
-
-        // stellt sicher dass ein "name" vorhanden ist
-        if (player1Name == null || player1Name.trim().isEmpty()) player1Name = "Player 1";
-        if (player2Name == null || player2Name.trim().isEmpty()) player2Name = "Player 2";
+        player1Name = getUniquePlayerName("Enter name for Player 1 (X):", "");
+        player2Name = getUniquePlayerName("Enter name for Player 2 (O):", player1Name);
 
         // setzt den startenden spieler
         currentPlayer = (Math.random() < 0.5) ? player1Name : player2Name;
@@ -38,7 +80,7 @@ public class TicTacToe extends javax.swing.JFrame {
                 JButton btn = new JButton("");
                 btn.setFont(new Font("Arial", Font.BOLD, 60));
                 btn.setFocusPainted(false);
-                btn.setBackground(Color.LIGHT_GRAY);
+                btn.setBackground(Color.GRAY);
                 btn.addActionListener(e -> buttonClicked(btn));
                 gamePanel.add(btn);
                 buttons[i][j] = btn;
@@ -47,6 +89,17 @@ public class TicTacToe extends javax.swing.JFrame {
 
         gamePanel.revalidate();
         gamePanel.repaint();
+    }
+
+    // keyboard controls initialisieren
+    private void setupKeyboardControls() {
+        this.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KeyPress(evt.getKeyCode());
+            }
+        });
+        this.setFocusable(true);
+        this.requestFocusInWindow();
     }
 
     // knöpfe auf dem grid drücken
@@ -58,7 +111,7 @@ public class TicTacToe extends javax.swing.JFrame {
         btn.setText(symbol);
 
         // button farbe
-        btn.setForeground(symbol.equals("X") ? Color.BLUE : Color.RED);
+        btn.setForeground(symbol.equals("X") ? Color.RED : Color.CYAN);
 
         turnCount++;
 
@@ -120,7 +173,7 @@ public class TicTacToe extends javax.swing.JFrame {
         for (JButton[] row : buttons) {
             for (JButton btn : row) {
                 btn.setText("");
-                btn.setBackground(Color.LIGHT_GRAY);
+                btn.setBackground(Color.GRAY);
             }
         }
         turnCount = 0;
@@ -141,18 +194,22 @@ public class TicTacToe extends javax.swing.JFrame {
         player2ScoreLabel = new JLabel("", SwingConstants.RIGHT);
         JButton quitButton = new JButton("Quit");
 
+        // quitbutton listener
         quitButton.addActionListener(e -> quitGame());
 
+        // toppanel mit den namen und scores
         JPanel topPanel = new JPanel(new GridLayout(1, 3));
         topPanel.add(player1ScoreLabel);
         topPanel.add(turnLabel);
         topPanel.add(player2ScoreLabel);
 
+        // Gesamt layout
         setLayout(new BorderLayout());
         add(topPanel, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.CENTER);
         add(quitButton, BorderLayout.SOUTH);
 
+        // konfiguratives
         setTitle("TicTacToe by Basil");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 450);
