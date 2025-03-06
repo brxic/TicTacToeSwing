@@ -65,9 +65,7 @@ mvn exec:java -Dexec.mainClass="com.example.library.forms.TicTacToe"
 The project is tested using JUnit5, focusing on the GameManager class to keep the UI separate.
 **The tests include**:  
 - Correct handling of win and draw scenarios.  
-- Validation that player names are not the same. (Under construction 🛠)
-- Ensuring the score updates correctly.  
-
+- Ensuring the score updates correctly.
 
 
 **Run Tests**
