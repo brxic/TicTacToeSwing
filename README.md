@@ -1,13 +1,119 @@
-**Task 1:**  
-- Human vs Human ✅
-- At the start of the game, each player enters their name ✅
-- The winner is displayed for each round, as well as the score ✅
-- During the game you can see which player's turn it is ✅
-- You can play until you end the program with a button ✅
-- Use different colors for the game ✅
-- If there is a draw/win, a message appears ✅
-- They start playing alternately ✅
+# TicTacToe Game (Java Swing)
 
-**Task 2:**  
-- Human vs AI ❌
-- Use number pad to press buttons ✅
+A classic **TicTacToe** game built using **Java Swing**, supporting **Human vs. Human** mode with a clean and interactive user interface. The project is designed with a **clear separation** between the game logic and the UI to ensure **easy testing and maintainability**.
+
+---
+
+## Features
+
+- **Two-Player Mode:** Play against another human on the same device.
+- **Player Name Input:** Custom name entry for both players.
+- **Score Tracking:** Displays and updates scores automatically.
+- **Visual Turn Indicator:** Shows which player's turn it is.
+- **Keyboard Control:** Option to play using the **Numpad** for quick tile selection.
+- **Popup Messages:** Alerts for **win**, **draw**, and **invalid actions** (e.g., same player names).
+- **End Game Options:** Reset the board or quit the game.
+- **Validation for Unique Names:** Ensures players cannot enter the same name through a warning popup.
+
+---
+
+## Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/brxic/TicTacToeSwing.git
+```
+
+2. Open the project in your IDE (e.g., IntelliJ IDEA).
+
+
+3. Build and run the project:
+
+
+
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
+
+
+---
+
+# How to Play
+
+1. Start the application.
+
+
+2. Enter unique names for both players.
+
+
+3. Take turns selecting grid tiles by clicking or using the Numpad.
+
+
+4. A popup message will indicate the game outcome.
+
+
+5. Choose to play again or quit using the buttons.
+
+
+
+
+---
+
+# Project Structure
+
+1. Classes
+
+**TicTacToe**: Main class handling the UI and player interactions.
+
+**GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management.
+
+**Tile**: Manages the 3x3 grid and individual tile behavior.
+
+
+2. Java Swing Elements Used
+
+**JFrame**: Main application window.
+
+**JPanel**: For structuring the grid and score display.
+
+**JButton**: Represents tiles in the grid and action buttons (e.g., "Quit").
+
+**JLabel**: Displays player turns and scores.
+
+**JOptionPane**: Shows popups for game results and name validation errors.
+
+**GridLayout**: Organizes the 3x3 grid layout.
+
+
+
+---
+
+# Testing
+
+Approach
+
+The project is tested using JUnit5, focusing on the GameManager class to keep the UI separate.
+
+The tests include:  
+
+Correct handling of win and draw scenarios.  
+
+Validation that player names are not the same.  
+
+Ensuring the score updates correctly.  
+
+
+
+Run Tests
+
+To execute the tests, run the following command:
+
+mvn test  
+
+
+---
+
+# License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
+
+
