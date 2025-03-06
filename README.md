@@ -30,10 +30,10 @@ git clone https://github.com/brxic/TicTacToeSwing.git
 3. Build and run the project:
 
 
-
+```bash
 mvn clean install
 mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
-
+```
 
 ---
 
@@ -89,11 +89,11 @@ mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
 
 # Testing
 
-Approach
+**Approach*"
 
 The project is tested using JUnit5, focusing on the GameManager class to keep the UI separate.
 
-The tests include:  
+**The tests include**:  
 
 Correct handling of win and draw scenarios.  
 
@@ -103,12 +103,13 @@ Ensuring the score updates correctly.
 
 
 
-Run Tests
+*"Run Tests**
 
 To execute the tests, run the following command:
 
+```bash
 mvn test  
-
+```
 
 ---
 
