@@ -44,11 +44,11 @@ mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
 
 # Project Structure
 
-1. Classes
+1. Classes  
 **TicTacToe**: Main class handling the UI and player interactions.  
 **GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management.  
 **Tile**: Manages the 3x3 grid and individual tile behavior.  
-2. Java Swing Elements Used
+2. Java Swing Elements Used  
 **JFrame**: Main application window.  
 **JPanel**: For structuring the grid and score display.  
 **JButton**: Represents tiles in the grid and action buttons (e.g., "Quit").  
