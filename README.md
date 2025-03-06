@@ -1,6 +1,7 @@
 # TicTacToe Game (Java Swing)
 
-A classic **TicTacToe** game built using **Java Swing**, supporting **Human vs. Human** mode with a clean and interactive user interface. The project is designed with a **clear separation** between the game logic and the UI to ensure **easy testing and maintainability**.
+A classic **TicTacToe** game built using **Java Swing**, supporting **Human vs. Human** mode with a clean and interactive user interface.  
+The project is designed with a **clear separation** between the game logic and the UI to ensure **easy testing and maintainability**.  
 
 ---
 
@@ -27,7 +28,7 @@ git clone https://github.com/brxic/TicTacToeSwing.git
 3. Build and run the project:
 ```bash
 mvn clean install
-mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
+mvn exec:java -Dexec.mainClass="com.example.library.forms.TicTacToe"
 ```
 
 ---
@@ -45,9 +46,9 @@ mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
 # Project Structure
 
 1. Classes  
-**TicTacToe**: Main class handling the UI and player interactions.  
-**GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management.  
-**Tile**: Manages the 3x3 grid and individual tile behavior.  
+**TicTacToe**: Main class handling the UI and player interactions as well as the 3x3 grid and individual tile behavior.  
+**GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management. In this Class there is just raw Java without Swing.  
+**Tile**: Manages the colors in the Project.  
 2. Java Swing Elements Used  
 **JFrame**: Main application window.  
 **JPanel**: For structuring the grid and score display.  
@@ -64,7 +65,7 @@ mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
 The project is tested using JUnit5, focusing on the GameManager class to keep the UI separate.
 **The tests include**:  
 - Correct handling of win and draw scenarios.  
-- Validation that player names are not the same.   
+- Validation that player names are not the same. (Under construction 🛠)
 - Ensuring the score updates correctly.  
 
 
