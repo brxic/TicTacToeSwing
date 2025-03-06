@@ -23,13 +23,8 @@ A classic **TicTacToe** game built using **Java Swing**, supporting **Human vs. 
 ```bash
 git clone https://github.com/brxic/TicTacToeSwing.git
 ```
-
 2. Open the project in your IDE (e.g., IntelliJ IDEA).
-
-
 3. Build and run the project:
-
-
 ```bash
 mvn clean install
 mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
@@ -38,75 +33,45 @@ mvn exec:java -Dexec.mainClass="com.example.library.ui.TicTacToe"
 ---
 
 # How to Play
-
-1. Start the application.
-
-
-2. Enter unique names for both players.
-
-
-3. Take turns selecting grid tiles by clicking or using the Numpad.
-
-
-4. A popup message will indicate the game outcome.
-
-
-5. Choose to play again or quit using the buttons.
-
-
-
+ 
+1. Start the application.  
+2. Enter unique names for both players.  
+3. Take turns selecting grid tiles by clicking or using the Numpad  
+4. A popup message will indicate the game outcome.  
+5. Choose to play again or quit using the buttons.  
 
 ---
 
 # Project Structure
 
 1. Classes
-
-**TicTacToe**: Main class handling the UI and player interactions.
-
-**GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management.
-
-**Tile**: Manages the 3x3 grid and individual tile behavior.
-
-
+**TicTacToe**: Main class handling the UI and player interactions.  
+**GameManager**: Contains the core game logic, such as move validation, win/draw detection, and score management.  
+**Tile**: Manages the 3x3 grid and individual tile behavior.  
 2. Java Swing Elements Used
-
-**JFrame**: Main application window.
-
-**JPanel**: For structuring the grid and score display.
-
-**JButton**: Represents tiles in the grid and action buttons (e.g., "Quit").
-
-**JLabel**: Displays player turns and scores.
-
-**JOptionPane**: Shows popups for game results and name validation errors.
-
-**GridLayout**: Organizes the 3x3 grid layout.
-
-
+**JFrame**: Main application window.  
+**JPanel**: For structuring the grid and score display.  
+**JButton**: Represents tiles in the grid and action buttons (e.g., "Quit").  
+**JLabel**: Displays player turns and scores.  
+**JOptionPane**: Shows popups for game results and name validation errors.  
+**GridLayout**: Organizes the 3x3 grid layout.  
 
 ---
 
 # Testing
 
-**Approach*"
-
+**Approach**
 The project is tested using JUnit5, focusing on the GameManager class to keep the UI separate.
-
 **The tests include**:  
-
-Correct handling of win and draw scenarios.  
-
-Validation that player names are not the same.  
-
-Ensuring the score updates correctly.  
+- Correct handling of win and draw scenarios.  
+- Validation that player names are not the same.   
+- Ensuring the score updates correctly.  
 
 
 
-*"Run Tests**
+**Run Tests**
 
 To execute the tests, run the following command:
-
 ```bash
 mvn test  
 ```
