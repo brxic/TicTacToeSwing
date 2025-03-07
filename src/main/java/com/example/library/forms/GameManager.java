@@ -24,7 +24,7 @@ public class GameManager {
     }
 
     public void setMove(int row, int col) {
-        if (!board[row][col].isEmpty()) return; // merkt wenn das feld schon voll ist
+        if (!board[row][col].isEmpty()) return; // merkt, wenn das feld schon voll ist
         String symbol = currentPlayer.equals(player1Name) ? "X" : "O";
         board[row][col] = symbol; // Aktualisiere das Spielfeld
         turnCount++;

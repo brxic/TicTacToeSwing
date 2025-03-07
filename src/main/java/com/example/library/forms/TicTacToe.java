@@ -18,7 +18,7 @@ public class TicTacToe extends JFrame implements GameManager.GameEventListener {
         // Starte Spielinitialisierung
         initializeGame();
     }
-    private void initializeGame() {
+    public void initializeGame() {
         String player1Name = getPlayerName("Enter name for Player 1 (X):");
         String player2Name;
         do {
