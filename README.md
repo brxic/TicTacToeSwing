@@ -5,8 +5,6 @@ The project is designed with a **clear separation** between the game logic and t
 
 > **Note:** The project documentation and code comments are in German because this project was created as part of an assignment at Work in Switzerland.
 
----
-
 ## Features
 
 - **Two-Player Mode:** Play against another human on the same device.
