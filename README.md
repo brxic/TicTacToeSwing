@@ -3,6 +3,8 @@
 A classic **TicTacToe** game built using **Java Swing**, supporting **Human vs. Human** mode with a clean and interactive user interface.  
 The project is designed with a **clear separation** between the game logic and the UI to ensure **easy testing and maintainability**.  
 
+> **Note:** The project documentation and code comments are in German because this project was created as part of an assignment at Work in Switzerland.
+
 ---
 
 ## Features
